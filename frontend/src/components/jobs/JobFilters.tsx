@@ -17,10 +17,11 @@ interface JobFiltersProps {
 
 export function JobFilters({ filters, onChange }: JobFiltersProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" role="form" aria-label="Job filters">
       <div>
-        <label className="text-sm font-medium text-gray-700">Keywords</label>
+        <label htmlFor="keywords" className="text-sm font-medium text-gray-700">Keywords</label>
         <Input
+          id="keywords"
           type="text"
           value={filters.keywords}
           onChange={(e) => onChange({ ...filters, keywords: e.target.value })}
@@ -30,8 +31,9 @@ export function JobFilters({ filters, onChange }: JobFiltersProps) {
       </div>
 
       <div>
-        <label className="text-sm font-medium text-gray-700">Location</label>
+        <label htmlFor="location" className="text-sm font-medium text-gray-700">Location</label>
         <Input
+          id="location"
           type="text"
           value={filters.location}
           onChange={(e) => onChange({ ...filters, location: e.target.value })}
@@ -59,10 +61,12 @@ export function JobFilters({ filters, onChange }: JobFiltersProps) {
       <div>
         <label className="flex items-center space-x-2">
           <Checkbox
+            id="remote"
             checked={filters.remote}
             onCheckedChange={(checked) => 
               onChange({ ...filters, remote: checked })
             }
+            aria-label="Remote only"
           />
           <span className="text-sm font-medium text-gray-700">Remote Only</span>
         </label>
@@ -73,6 +77,7 @@ export function JobFilters({ filters, onChange }: JobFiltersProps) {
         {['Entry Level', 'Mid Level', 'Senior', 'Lead', 'Executive'].map((level) => (
           <label key={level} className="flex items-center mt-2 space-x-2">
             <Checkbox
+              id={`experience-${level.toLowerCase().replace(' ', '-')}`}
               checked={filters.experience.includes(level)}
               onCheckedChange={(checked) => {
                 const newExperience = checked
@@ -80,6 +85,7 @@ export function JobFilters({ filters, onChange }: JobFiltersProps) {
                   : filters.experience.filter((e) => e !== level);
                 onChange({ ...filters, experience: newExperience });
               }}
+              aria-label={`${level} experience level`}
             />
             <span className="text-sm text-gray-600">{level}</span>
           </label>
