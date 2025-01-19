@@ -13,6 +13,81 @@ In a world saturated with overly serious, self-aggrandizing professional network
 
 ![image](https://github.com/user-attachments/assets/bafdf0fd-6b74-4737-9e60-3f7341890a17)
 
+## Directory Structure
+~~~~
+bonkedIn/
+├── backend/
+│   ├── api-gateway/
+│   ├── config-server/
+│   ├── eureka-server/
+│   ├── services/
+│   │   ├── user-service/
+│   │   ├── post-service/
+│   │   ├── connection-service/
+│   │   ├── messaging-service/
+│   │   ├── job-service/
+│   │   ├── notification-service/
+│   │   ├── analytics-service/
+│   │   ├── recommendation-service/
+│   │   ├── video-service/
+│   │   ├── blockchain-service/
+│   │   └── content-moderation-service/
+│   ├── common/
+│   │   ├── models/
+│   │   └── utils/
+│   ├── data/
+│   │   ├── elasticsearch/
+│   │   ├── kafka/
+│   │   └── redis/
+│   └── docker-compose.yml
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── redux/
+│   │   ├── i18n/
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── README.md
+├── mobile/
+│   ├── android/
+│   ├── ios/
+│   └── src/
+├── infrastructure/
+│   ├── terraform/
+│   ├── kubernetes/
+│   └── ci-cd/
+├── docs/
+│   ├── api/
+│   ├── architecture/
+│   └── user-guides/
+├── scripts/
+├── .gitignore
+├── README.md
+└── LICENSE
+~~~~
+
+Key points about this structure:
+1. The backend directory now includes:
+	+ Separate directories for each microservice under services/
+api-gateway, config-server, and eureka-server for the supporting infrastructure
+	+ A common directory for shared models and utilities
+	+ A data directory for data-related configurations (Elasticsearch, Kafka, Redis)
+	+ A docker-compose.yml file for local development setup
+2. The frontend directory remains similar but includes additional directories for Redux and internationalization (i18n).
+3. A new mobile directory for React Native mobile app development.
+4. An infrastructure directory containing:
+	+ Terraform scripts for infrastructure as code
+	+ Kubernetes configurations for container orchestration
+	+ CI/CD pipeline configurations
+5. A docs directory for API documentation, architecture diagrams, and user guides.
+6. A scripts directory for utility scripts, database migrations, etc.
+
+
 
 
 
