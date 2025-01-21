@@ -1,4 +1,4 @@
-# Bonkedin: A satirical alternative to LinkedIn
+# HireWorthy, formerly Bonkedin: A satirical alternative to LinkedIn (now getting serious)
 Welcome to BonkedIn, the app that turns the world of professional networking on its head!
 
 ![bonkedIn](https://github.com/user-attachments/assets/4c369214-f6f8-4aa2-ae1f-ab00276a0dbd)
